@@ -1,0 +1,57 @@
+// Variables
+$colorWhite: #e0e0e0;
+$colorBlack: #232323;
+$colorOrange: #ff7b00;
+$border-radius: 10px;
+
+@media screen and (min-width: 0px) {
+    // Global Styles
+    html {
+        background-color: $colorWhite;
+        margin: 0;
+    }
+    body {
+        margin: 0;
+    }
+    h1, h2, h3 {
+        margin: 0;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+    }
+    main {
+        grid-column: 2/3;
+    }
+    // Sidebar
+    .sidebar {
+        background-color: $colorBlack;
+        height: 100vh;
+        grid-column: 1/2;
+    }
+    .sidebar-h {
+        text-align: center;
+        padding-top: 0.75em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: $colorWhite;
+    }
+    .sidebar-ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .sidebar-link {
+        color: $colorWhite;
+        text-decoration: none;
+        margin: 0 1em;
+        padding: 1.5em 1em;
+        display: block;
+        border-radius: $border-radius;
+        &:hover {
+            background-color: $colorOrange;
+        }
+    }
+}

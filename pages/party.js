@@ -1,18 +1,21 @@
+import React from 'react'
 import Head from 'next/head'
 import Sidebar from '../components/Sidebar'
 
-export default function Home() {
+const PartyPage = () => {
   return (
-    <div className="container">
-      <Head>
-        <title>Journal | Daelius</title>
+    <div>
+        <Head>
+        <title>Party | Daelius</title>
         <meta name="description" content="Dungeons & Dragons campaign management system." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar />
       <main>
-        <h1>Journal</h1>
+        Party
       </main>
     </div>
   )
 }
+
+export default PartyPage
