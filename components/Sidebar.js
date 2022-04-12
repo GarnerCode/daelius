@@ -22,6 +22,10 @@ const Sidebar = () => {
               </Link>
             </li>
         </ul>
+        <div className="sidebar-user-container">
+          <img src="../images/pfp-placeholder.jpg" alt="Profile Picture" />
+          <p>Username</p>
+        </div>
     </div>
   )
 }

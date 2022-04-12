@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Sidebar from '../components/Sidebar'
 
 export default function Home() {
+
+  const [campaignTitle, setCampaignTitle] = useState('My Campaign');
+
   return (
     <div className="container">
       <Head>
@@ -10,9 +14,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar />
-      <main>
+      <div className="main-content">
         <h1>Journal</h1>
-      </main>
+      </div>
     </div>
   )
 }

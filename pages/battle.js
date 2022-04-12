@@ -11,9 +11,9 @@ const BattlePage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar />
-      <main>
-        Battle
-      </main>
+      <div className="main-content">
+        <h1>Battle</h1>
+      </div>
     </div>
   )
 }

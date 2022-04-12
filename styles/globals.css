@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap");
 @media screen and (min-width: 0px) {
   html {
     background-color: #e0e0e0;
@@ -6,8 +7,12 @@
   body {
     margin: 0;
   }
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
   h1, h2, h3 {
     margin: 0;
+    font-family: 'Poppins', sans-serif;
   }
   .container {
     display: -ms-grid;
@@ -15,10 +20,11 @@
     -ms-grid-columns: 1fr 7fr;
         grid-template-columns: 1fr 7fr;
   }
-  main {
+  .main-content {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
+    height: 200vh;
   }
   .sidebar {
     background-color: #232323;
@@ -26,6 +32,8 @@
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
+    position: fixed;
+    width: 15em;
   }
   .sidebar-h {
     text-align: center;
@@ -57,6 +65,26 @@
     border-radius: 10px;
   }
   .sidebar-link:hover {
+    background-color: #ff7b00;
+  }
+  .sidebar-user-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 15em;
+    color: #e0e0e0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .sidebar-user-container:hover {
     background-color: #ff7b00;
   }
 }

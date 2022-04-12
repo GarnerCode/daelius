@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
 // Variables
 $colorWhite: #e0e0e0;
 $colorBlack: #232323;
@@ -13,21 +14,28 @@ $border-radius: 10px;
     body {
         margin: 0;
     }
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
     h1, h2, h3 {
         margin: 0;
+        font-family: 'Poppins', sans-serif;
     }
     .container {
         display: grid;
         grid-template-columns: 1fr 7fr;
     }
-    main {
+    .main-content {
         grid-column: 2/3;
+        height: 200vh;
     }
     // Sidebar
     .sidebar {
         background-color: $colorBlack;
         height: 100vh;
         grid-column: 1/2;
+        position: fixed;
+        width: 15em;
     }
     .sidebar-h {
         text-align: center;
@@ -50,6 +58,19 @@ $border-radius: 10px;
         padding: 1.5em 1em;
         display: block;
         border-radius: $border-radius;
+        &:hover {
+            background-color: $colorOrange;
+        }
+    }
+    .sidebar-user-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 15em;
+        color: $colorWhite;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
         &:hover {
             background-color: $colorOrange;
         }

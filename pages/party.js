@@ -11,9 +11,9 @@ const PartyPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar />
-      <main>
-        Party
-      </main>
+      <div className="main-content">
+        <h1>Party</h1>
+      </div>
     </div>
   )
 }
