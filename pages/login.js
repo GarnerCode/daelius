@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
-import { getRedirectResult, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged } from "firebase/auth";
+import { getRedirectResult, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth, provider } from '../lib/firebase'
 
 const LoginPage = () => {
 
-  const user = null;
+  const [userId, setUserId] = useState(null);
+  const [username, setUsername] = useState(null);
 
   const userSignIn = () => {
     signInWithRedirect(auth, provider);
@@ -14,7 +15,6 @@ const LoginPage = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         user = result.user;
-        console.log(result.user);
       }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -23,16 +23,13 @@ const LoginPage = () => {
       });
   }
 
+  // Authentication Observer
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      user = user.uid;
-      console.log(user);
-      // ...
+      setUserId(user.uid);
+      setUsername(user.displayName);
     } else {
-      user = null;
-      console.log("User is not signed in.");
+      setUserId(null);
     }
   });
 
@@ -43,10 +40,10 @@ const LoginPage = () => {
         <meta name="description" content="Dungeons & Dragons campaign management system." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {user ?
+      {userId ?
         <>
-          <h1>Signed in as USERNAME</h1>
-          <button>Sign Out</button>
+          <h1>Signed in as {username}</h1>
+          <button onClick={() => signOut(auth)}>Sign Out</button>
         </>
         :
         <>
